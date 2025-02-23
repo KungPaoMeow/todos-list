@@ -11,20 +11,20 @@ export default function TodoForm({ addTodo }: TodoFormProps) {
 
     const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
         setText(evt.target.value);
-    }
+    };
 
     const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
         evt.preventDefault();
         addTodo(text);
         setText("");
-    }
+    };
 
     return (
         <ListItem>
             <form onSubmit={handleSubmit}>
                 <TextField 
                     id="outlined-basic" 
-                    label="Outlined" 
+                    label="Add Todo" 
                     variant="outlined" 
                     onChange={handleChange} 
                     value={text}
@@ -42,5 +42,5 @@ export default function TodoForm({ addTodo }: TodoFormProps) {
                 />
             </form>
         </ListItem>
-    )
+    );
 }
